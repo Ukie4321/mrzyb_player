@@ -111,35 +111,3 @@ window.onload = function(){
 </script>
 </body>
 </html>
-  <div class="logo">
-    <img src="https://api.pcloud.com/getpubthumb?code=XZ0uuD5ZzfDh2YV37h7eG7CCkCG8O5CRjG4k&linkpassword=&size=512x542&crop=0&type=auto" alt="MRZYB Logo">
-  </div>
-
-  <!-- Link Telegram -->
-  <div class="telegram-link">
-    <a href="https://t.me/mrzybfilm" target="_blank">Join Telegram @mrzybfilm</a>
-  </div>
-
-  <p>Masukkan link video MP4:</p>
-  <input type="text" id="videoLink" placeholder="Paste link MP4 di sini">
-  <button onclick="playVideo()">Tonton</button>
-
-  <br><br>
-  <video id="videoPlayer" controls>
-    <source id="videoSource" src="" type="video/mp4">
-    Browser Anda tidak mendukung video.
-  </video>
-
-  <script>
-    function playVideo() {
-      const link = document.getElementById("videoLink").value;
-      const video = document.getElementById("videoPlayer");
-      const source = document.getElementById("videoSource");
-      source.src = link;
-      video.load();
-      video.play();
-    }
-  </script>
-
-</body>
-</html>
