@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MRZYB-PLAYER</title>
+  <!-- Tambah font keren dari Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #111;
+      color: white;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* Judul keren */
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 28px; /* diperkecil agar muat 1 baris */
+      color: white; /* teks putih */
+      text-shadow: 0 0 8px #00a2ff, 0 0 16px #7f00ff, 0 0 24px #00a2ff;
+      margin-bottom: 15px;
+      animation: glow 2s infinite alternate;
+    }
+
+    /* Animasi teks glow */
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 8px #00a2ff, 0 0 16px #7f00ff, 0 0 24px #00a2ff;
+      }
+      to {
+        text-shadow: 0 0 15px #00f7ff, 0 0 30px #9a00ff, 0 0 45px #00f7ff;
+      }
+    }
+
+    .logo {
+      margin: 10px 0;
+    }
+    .logo img {
+      width: 120px;
+      border-radius: 15px;
+    }
+    .telegram-link {
+      margin-top: 10px;
+    }
+    .telegram-link a {
+      color: #00a2ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .telegram-link a:hover {
+      text-decoration: underline;
+    }
+
+    /* Input & tombol */
+    input[type="text"] {
+      padding: 10px;
+      width: 60%;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      margin-right: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+
+    /* Video player dengan border bercahaya */
+    #videoPlayer {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 600px;
+      border: 3px solid #00a2ff;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #00a2ff, 0 0 30px #00a2ff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>MRZYB-PLAYER</h1>
+
+  <!-- Logo -->
+  <div class="logo">
+    <img src="https://api.pcloud.com/getpubthumb?code=XZ0uuD5ZzfDh2YV37h7eG7CCkCG8O5CRjG4k&linkpassword=&size=512x542&crop=0&type=auto" alt="MRZYB Logo">
+  </div>
+
+  <!-- Link Telegram -->
+  <div class="telegram-link">
+    <a href="https://t.me/mrzybfilm" target="_blank">Join Telegram @mrzybfilm</a>
+  </div>
+
+  <p>Masukkan link video MP4:</p>
+  <input type="text" id="videoLink" placeholder="Paste link MP4 di sini">
+  <button onclick="playVideo()">Tonton</button>
+
+  <br><br>
+  <video id="videoPlayer" controls>
+    <source id="videoSource" src="" type="video/mp4">
+    Browser Anda tidak mendukung video.
+  </video>
+
+  <script>
+    function playVideo() {
+      const link = document.getElementById("videoLink").value;
+      const video = document.getElementById("videoPlayer");
+      const source = document.getElementById("videoSource");
+      source.src = link;
+      video.load();
+      video.play();
+    }
+  </script>
+
+</body>
+</html>
